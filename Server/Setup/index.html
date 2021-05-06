@@ -498,16 +498,16 @@
 </ol>
 <h3 id="step-2"><strong>Step 2</strong><a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <p>From a terminal on your local computer, connect to the server as root. Login to the Droplet (Host) as below:</p>
-<blockquote>
-<p><strong>ssh root@use_your_server_ip</strong></p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code>    ssh root@use_your_server_ip
+</code></pre></div>
+
 <p><strong>Note:</strong> Be sure to substitute the server’s public IP address for use_your_server_ip.</p>
 <h3 id="step-3"><strong>Step 3</strong><a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
 <p>An interactive script that runs, will prompt you for the domain &amp; sub-domain and further questions.</p>
-<blockquote>
-<p><strong>Please input a valid domain:</strong></p>
-<p><strong>Please verify it is correct. [y/N]</strong></p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code>Please input a valid domain:
+Please verify it is correct. [y/N]
+</code></pre></div>
+
 <p>Further questions are explained <a href= "https://marketplace.digitalocean.com/apps/openlitespeed-wordpress" target="_blank"><strong>here</strong></a>.</p>
 <h3 id="step-4"><strong>Step 4</strong><a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h3>
 <p>Setup removal of temporary session files and run <strong>wp_cron</strong></p>
@@ -518,36 +518,38 @@
 <p><a href= "https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804" target="_blank"><strong>How to use Cron to Automate Tasks</strong></a></p>
 <h4 id="delete-tmp-session-files"><strong>Delete tmp session files</strong><a class="headerlink" href="#delete-tmp-session-files" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Use the below command to delete tml session files:</li>
+<li>
+<p>Use the below command to delete tml session files:</p>
+<div class="codehilite"><pre><span></span><code>*/30 * * * * find -O3 &quot;/tmp&quot; -ignore_readdir_race -depth -mindepth 1 -name &#39;sess_*&#39; -type f -cmin +180 -delete
+</code></pre></div>
+
+</li>
+<li>
+<p>Use below command to run cron every 15 mins:</p>
+<div class="codehilite"><pre><span></span><code>*/15 * * * * wget -q -O
+</code></pre></div>
+
+</li>
 </ol>
-<blockquote>
-<p>**/30 * * * * find -O3 "/tmp" -ignore_readdir_race -depth -mindepth 1 -name 'sess_*' -type f -cmin +180 -delete</p>
-</blockquote>
-<ol>
-<li>Use below command to run cron every 15 mins:</li>
-</ol>
-<blockquote>
-<p>*/15 * * * * wget -q -O</p>
-</blockquote>
 <p><strong>Note:</strong> Don't forget to change the url to the website url.</p>
 <h4 id="disabling-cron-job-from-wordpress"><strong>Disabling CRON job from WordPress</strong><a class="headerlink" href="#disabling-cron-job-from-wordpress" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Navigate to <strong>wp_config.php</strong> file by navigating to public file (/var/www/html/)</li>
-<li>Add the following line after WP_DEBUG:</li>
+<li>Add the following line after WP_DEBUG:<div class="codehilite"><pre><span></span><code>define( ‘&#39;DISABLE_WP_CRON&#39;, true );
+</code></pre></div>
+
+</li>
 </ol>
-<blockquote>
-<p><strong>define( ‘'DISABLE_WP_CRON', true );</strong></p>
-</blockquote>
 <p>The above command will disable WP CRON and use system CRON</p>
 <p><a href= "https://kinsta.com/knowledgebase/disable-wp-cron/#disable-wp-cron" target="_blank"><strong>Refer Link</strong></a></p>
 <h3 id="security-prevent-file-edits"><strong>Security - Prevent File Edits</strong><a class="headerlink" href="#security-prevent-file-edits" title="Permanent link">&para;</a></h3>
 <p>In order to maintain the security and avoid any file edits, follow the <a href="https://www.isitwp.com/disable-editors-and-plugin-modifications-entirely/" target="_blank"><strong>below</strong></a> step:</p>
 <ol>
-<li>Add the below code to the wp_config.php file:</li>
+<li>Add the below code to the wp_config.php file:<div class="codehilite"><pre><span></span><code>(‘DISALLOW_FILE_EDIT&#39;, true);
+</code></pre></div>
+
+</li>
 </ol>
-<blockquote>
-<p><strong>(‘DISALLOW_FILE_EDIT', true);</strong></p>
-</blockquote>
                 
                   
                     
