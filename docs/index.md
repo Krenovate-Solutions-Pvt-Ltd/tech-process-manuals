@@ -1,10 +1,5 @@
-# This is a sample Documentation
+#   **Tech Process Manuals**
 
-If you see this, then you have successfully installed mkdocs setup and run it in your machine.
+This manual has been prepared with the idea to provide knowledge about various the technical process being followed at Krenovate Solutions Pvt. Ltd.
 
-This is a trial doc.
-
-We are creating a tech manual.
-
-
-Visit `docs/` directory and start creating an awesome documentation.
+A step by step process flow has been created in order to provide guidance to any new joinee or anyone currently part of Krenovate.

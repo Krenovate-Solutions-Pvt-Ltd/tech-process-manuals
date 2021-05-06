@@ -1,6 +1,11 @@
-site_name: Documentation Template
+site_name: Tech Process Manuals
 nav:
-  -  Welcome:  'index.md'
+  -  Server:  
+      -  Introduction:  'Server/Introduction.md'
+      -  Creation:  'Server/Creation.md'
+      -  Setup:  'Server/Setup.md'
+  -  Unnamed:  'Unnamed.md'
+  
 theme:
   name: material
   features:
