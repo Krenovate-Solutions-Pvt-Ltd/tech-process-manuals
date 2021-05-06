@@ -4,7 +4,6 @@ nav:
       -  Introduction:  'Server/Introduction.md'
       -  Creation:  'Server/Creation.md'
       -  Setup:  'Server/Setup.md'
-  -  Unnamed:  'Unnamed.md'
   
 theme:
   name: material
