@@ -23,7 +23,7 @@ OpenLiteSpeed WordPress One-Click automatically installs OpenLiteSpeed, LSCache,
 
 From a terminal on your local computer, connect to the server as root. Login to the Droplet (Host) as below:
 
->   **ssh root@use_your_server_ip**
+        ssh root@use_your_server_ip
 
 **Note:** Be sure to substitute the server’s public IP address for use_your_server_ip.
 
@@ -32,9 +32,8 @@ From a terminal on your local computer, connect to the server as root. Login to 
 
 An interactive script that runs, will prompt you for the domain & sub-domain and further questions.
 
->   **Please input a valid domain:**
-
->   **Please verify it is correct. [y/N]**
+    Please input a valid domain:
+    Please verify it is correct. [y/N]
 
 Further questions are explained <a href= "https://marketplace.digitalocean.com/apps/openlitespeed-wordpress" target="_blank">**here**</a>.
 
@@ -58,11 +57,11 @@ Cron tab is already installed. Follow the below link to learn how to create/add/
 
 1.  Use the below command to delete tml session files:
 
->   **/30 * * * * find -O3 "/tmp" -ignore_readdir_race -depth -mindepth 1 -name 'sess_*' -type f -cmin +180 -delete
+        */30 * * * * find -O3 "/tmp" -ignore_readdir_race -depth -mindepth 1 -name 'sess_*' -type f -cmin +180 -delete
 
 2.  Use below command to run cron every 15 mins:
 
->   */15 * * * * wget -q -O
+        */15 * * * * wget -q -O
 
 **Note:** Don't forget to change the url to the website url.
 
@@ -71,7 +70,7 @@ Cron tab is already installed. Follow the below link to learn how to create/add/
 1.  Navigate to **wp_config.php** file by navigating to public file (/var/www/html/)
 2.  Add the following line after WP_DEBUG:
 
->   **define( ‘'DISABLE_WP_CRON', true );**
+        define( ‘'DISABLE_WP_CRON', true );
 
 The above command will disable WP CRON and use system CRON
 
@@ -83,7 +82,7 @@ In order to maintain the security and avoid any file edits, follow the <a href="
 
 1.  Add the below code to the wp_config.php file:
 
->   **(‘DISALLOW_FILE_EDIT', true);**
+        (‘DISALLOW_FILE_EDIT', true);
 
 
 
