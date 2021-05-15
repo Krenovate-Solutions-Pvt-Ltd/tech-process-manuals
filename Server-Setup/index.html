@@ -312,9 +312,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#disabling-cron-job-from-wordpress" class="md-nav__link">
-    Disabling CRON job from WordPress
+  <a href="#disabling-cron-from-wordpress" class="md-nav__link">
+    Disabling CRON from WordPress
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -322,11 +327,6 @@
   <a href="#security-prevent-file-edits" class="md-nav__link">
     Security - Prevent File Edits
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -490,9 +490,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#disabling-cron-job-from-wordpress" class="md-nav__link">
-    Disabling CRON job from WordPress
+  <a href="#disabling-cron-from-wordpress" class="md-nav__link">
+    Disabling CRON from WordPress
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -500,11 +505,6 @@
   <a href="#security-prevent-file-edits" class="md-nav__link">
     Security - Prevent File Edits
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -541,8 +541,8 @@
 <p><img alt="image" src="../images/image.jpg" /></p>
 </li>
 <li>
-<p>The above step would take you to this <a href="https://marketplace.digitalocean.com/apps/openlitespeed-wordpress" target="_blank"><strong>Page</strong> </a> </p>
-<p><img alt="marketplace" src="../images/marketplace.jpg" /></p>
+<p>The above step opens  a search box where you can search for the image. See image below:</p>
+<p><img alt="marketplacesearch" src="../images/marketplacesearch.jpg" /></p>
 </li>
 </ol>
 <h4 id="choose-a-plan"><strong>Choose a Plan</strong><a class="headerlink" href="#choose-a-plan" title="Permanent link">&para;</a></h4>
@@ -571,10 +571,6 @@
 <p><img alt="password" src="../images/password.jpg" /></p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Do not use the SSH Keys.</p>
-</div>
 <h4 id="finalize-create"><strong>Finalize &amp; Create</strong><a class="headerlink" href="#finalize-create" title="Permanent link">&para;</a></h4>
 <p>Complete the below steps to finalize the Droplet:</p>
 <ol>
@@ -596,7 +592,7 @@
 <h4 id="add-a-dns-record"><strong>Add a DNS record</strong><a class="headerlink" href="#add-a-dns-record" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>Add a DNS record using IP just created.</p>
+<p>Add "A" record in your DNS with the IP address just created.</p>
 <p><img alt="dnsip" src="../images/dnsip.jpg" /></p>
 </li>
 <li>
@@ -642,24 +638,25 @@ Please verify it is correct: [y/N]
 <h4 id="delete-tmp-session-files"><strong>Delete tmp session files</strong><a class="headerlink" href="#delete-tmp-session-files" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>Use the below command to delete tmp session files:</p>
+<p>Add the following cron to delete temp session files:</p>
 <div class="codehilite"><pre><span></span><code>*/30 * * * * find -O3 &quot;/tmp&quot; -ignore_readdir_race -depth -mindepth 1 -name &#39;sess_*&#39; -type f -cmin +180 -delete
 </code></pre></div>
 
 </li>
 <li>
-<p>Use below command to run cron every 15 mins (Taper as required):</p>
+<p>Add the below cron to run WordPress cron every 15 minute - This should be substituted with <a href="#disabling-cron-from-wordpress">Disabling CRON from WordPress</a></p>
 <div class="codehilite"><pre><span></span><code>*/15 * * * * wget -q -O
 </code></pre></div>
 
 <p><img alt="cronjob" src="../images/cronjob.jpg" /></p>
 </li>
 </ol>
+<p>Example: */15 * * * * wget -q -O - <a href="https://example.com">https://example.com</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don't forget to change the url to the website url (sample <a href= "https://www.mycrush.fit/wp-cron.php?doing_wp_cron"target="_blank"><strong>Link</strong></a>)</p>
 </div>
-<h4 id="disabling-cron-job-from-wordpress"><strong>Disabling CRON job from WordPress</strong><a class="headerlink" href="#disabling-cron-job-from-wordpress" title="Permanent link">&para;</a></h4>
+<h4 id="disabling-cron-from-wordpress"><strong>Disabling CRON from WordPress</strong><a class="headerlink" href="#disabling-cron-from-wordpress" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Navigate to <strong>wp_config.php</strong> file by navigating to public file (/var/www/html/)</li>
 <li>
@@ -672,7 +669,7 @@ Please verify it is correct: [y/N]
 <p>The above command will disable WP CRON and use system CRON - <a href= "https://kinsta.com/knowledgebase/disable-wp-cron/#disable-wp-cron" target="_blank"><strong>Refer Link</strong></a></p>
 </li>
 </ol>
-<h4 id="security-prevent-file-edits"><strong>Security - Prevent File Edits</strong><a class="headerlink" href="#security-prevent-file-edits" title="Permanent link">&para;</a></h4>
+<h3 id="security-prevent-file-edits"><strong>Security - Prevent File Edits</strong><a class="headerlink" href="#security-prevent-file-edits" title="Permanent link">&para;</a></h3>
 <p>In order to maintain the security and avoid any file edits, follow the <a href="https://www.isitwp.com/disable-editors-and-plugin-modifications-entirely/" target="_blank"><strong>below</strong></a> step:</p>
 <ol>
 <li>
@@ -691,7 +688,7 @@ Please verify it is correct: [y/N]
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 12, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 15, 2021</span>
     
   </small>
 </div>
