@@ -21,9 +21,10 @@ At Krenovate, DigitalOcean is used as Host. Below are the steps to create a drop
 
       ![image](images\image.jpg)
 
-2.    The above step would take you to this <a href="https://marketplace.digitalocean.com/apps/openlitespeed-wordpress" target="_blank">**Page** </a> 
+2.    The above step opens  a search box where you can search for the image. See image below:
+ 
 
-      ![marketplace](images\marketplace.jpg)
+      ![marketplacesearch](images\marketplacesearch.jpg)
 
 ####    **Choose a Plan**
 
@@ -49,8 +50,6 @@ At Krenovate, DigitalOcean is used as Host. Below are the steps to create a drop
 
     ![password](images\password.jpg)
 
-!!! Note
-    Do not use the SSH Keys.
 
 ####    **Finalize & Create**
 
@@ -73,7 +72,7 @@ Complete the below steps to finalize the Droplet:
 
 ####    **Add a DNS record**
 
-* Add a DNS record using IP just created.
+* Add "A" record in your DNS with the IP address just created.
 
     ![dnsip](images\dnsip.jpg)
   
@@ -127,20 +126,22 @@ Cron tab is already installed. Follow the below link to learn how to create/add/
 
 ####    **Delete tmp session files**
 
-1.  Use the below command to delete tmp session files:
+1.  Add the following cron to delete temp session files:
 
         */30 * * * * find -O3 "/tmp" -ignore_readdir_race -depth -mindepth 1 -name 'sess_*' -type f -cmin +180 -delete
 
-2.  Use below command to run cron every 15 mins (Taper as required):
+2.  Add the below cron to run WordPress cron every 15 minute - This should be substituted with [Disabling CRON from WordPress](#disabling-cron-from-wordpress)
 
         */15 * * * * wget -q -O
 
     ![cronjob](images\cronjob.jpg)
 
+Example: */15 * * * * wget -q -O - https://example.com
+
 !!! Note
     Don't forget to change the url to the website url (sample <a href= "https://www.mycrush.fit/wp-cron.php?doing_wp_cron"target="_blank">**Link**</a>)
 
-####    **Disabling CRON job from WordPress**
+####    **Disabling CRON from WordPress**
 
 1.  Navigate to **wp_config.php** file by navigating to public file (/var/www/html/)
 2.  Add the following line after WP_DEBUG:
@@ -149,7 +150,7 @@ Cron tab is already installed. Follow the below link to learn how to create/add/
 
 3. The above command will disable WP CRON and use system CRON - <a href= "https://kinsta.com/knowledgebase/disable-wp-cron/#disable-wp-cron" target="_blank">**Refer Link**</a>
 
-#### **Security - Prevent File Edits**
+### **Security - Prevent File Edits**
 
 In order to maintain the security and avoid any file edits, follow the <a href="https://www.isitwp.com/disable-editors-and-plugin-modifications-entirely/" target="_blank">**below**</a> step:
 
