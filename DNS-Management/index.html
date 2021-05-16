@@ -371,6 +371,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    Cloudflare
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloudflare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-cloudflare-account" class="md-nav__link">
+    Create a Cloudflare Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-domain-to-the-account" class="md-nav__link">
+    Add a Domain to the account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-your-domain-nameservers-to-cloudflare" class="md-nav__link">
+    Change your domain nameservers to Cloudflare
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dns-records" class="md-nav__link">
+    Managing DNS Records
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing DNS Records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-dns-records" class="md-nav__link">
+    Add DNS Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-dns-record" class="md-nav__link">
+    Delete a DNS Record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -560,6 +621,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    Cloudflare
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloudflare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-cloudflare-account" class="md-nav__link">
+    Create a Cloudflare Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-domain-to-the-account" class="md-nav__link">
+    Add a Domain to the account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-your-domain-nameservers-to-cloudflare" class="md-nav__link">
+    Change your domain nameservers to Cloudflare
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dns-records" class="md-nav__link">
+    Managing DNS Records
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing DNS Records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-dns-records" class="md-nav__link">
+    Add DNS Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-dns-record" class="md-nav__link">
+    Delete a DNS Record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -602,12 +724,13 @@
 <p class="admonition-title">Note</p>
 <p>The top 4 records are the most commonly used records.</p>
 </div>
+<p>Read more about DNS Record types <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare" target="_blank"><strong>here</strong></a></p>
 <h2 id="platforms"><strong>Platforms</strong><a class="headerlink" href="#platforms" title="Permanent link">&para;</a></h2>
 <p>At Krenovate, we use 3 platforms to manage the domains for client websites. All 3 are explained below:</p>
 <h3 id="godaddy"><strong>GoDaddy</strong><a class="headerlink" href="#godaddy" title="Permanent link">&para;</a></h3>
 <p>In this case, the domain is registered and hosted with GoDaddy. All the DNS settings will be <a href= "https://in.godaddy.com/help/manage-dns-zone-files-680" target="_blank"><strong>managed</strong></a> through the GoDaddy account. Follow the below steps:</p>
 <ol>
-<li>Login to GoDaddy</li>
+<li>Login to your GoDaddy account.</li>
 <li>Select your domain to access the domain settings page.</li>
 <li>
 <p>Click -&gt; Manage DNS</p>
@@ -644,7 +767,7 @@
 <p>The above process can be followed to edit/add any kind of record. Refer the <a href= "https://in.godaddy.com/help/change-an-a-record-19239" target="_blank"><strong>Link</strong></a></p>
 </div>
 <h3 id="digitalocean"><strong>DigitalOcean</strong><a class="headerlink" href="#digitalocean" title="Permanent link">&para;</a></h3>
-<p>In this case, the Domain is registered with GoDaddy but will be hosted on DigitalOcean, hence, the DNS records would be managed through the DigitalOcean account. </p>
+<p>In this case, if the Domain is registered with other registrar we can manage the DNS on DigitalOcean, hence, the DNS records would be managed through the DigitalOcean account. </p>
 <p>This is determined by where your nameservers are pointing.</p>
 <h4 id="add-domain"><strong>Add Domain</strong><a class="headerlink" href="#add-domain" title="Permanent link">&para;</a></h4>
 <p>Adding a domain you own to your DigitalOcean account lets you manage the domain’s DNS records with the control panel and API. Below are the steps to follow:</p>
@@ -690,7 +813,7 @@
 <p>The <a href= "https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/#supported-record-types" target= "_blank"><strong>supported record types</strong></a> sections have detailed instructions for each type of record.</p>
 <h4 id="nameservers"><strong>Nameservers</strong><a class="headerlink" href="#nameservers" title="Permanent link">&para;</a></h4>
 <p>This is an important step in order to be able to manage your domain through DigitalOcean.</p>
-<p>To connect a GoDaddy domain with the DigitalOcean droplet:</p>
+<p>To connect a GoDaddy domain with the DigitalOcean droplet, we have to replace the GoDaddy nameservers with the DigitalOcean Nameservers. Follow the below steps:</p>
 <ol>
 <li>Login to your GoDaddy account.</li>
 <li>Go to -&gt; Domain manager</li>
@@ -719,6 +842,88 @@
 <p><img alt="updatedlook" src="../images/DNS-Management/updatedlook.jpg" /></p>
 </li>
 </ol>
+<h3 id="cloudflare"><strong>Cloudflare</strong><a class="headerlink" href="#cloudflare" title="Permanent link">&para;</a></h3>
+<p>At Cloudflare, DNS can be managed for a domain registered with some other registrar. For this to happen - a unique account for each client has to be setup. To do so, follow below steps in this guide:</p>
+<h4 id="create-a-cloudflare-account"><strong>Create a Cloudflare Account</strong><a class="headerlink" href="#create-a-cloudflare-account" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Go to <a href= "https://www.cloudflare.com/" target= "_blank"><strong><a href="http://www.cloudflare.com">www.cloudflare.com</a></strong></a></li>
+<li>Signup using an email id and password.</li>
+<li>
+<p>Click -&gt; <strong>Create Account</strong></p>
+<p><img alt="cfcreateacct" src="../images/DNS-Management/cfcreateacct.jpg" /></p>
+</li>
+</ol>
+<h4 id="add-a-domain-to-the-account"><strong>Add a Domain to the account</strong><a class="headerlink" href="#add-a-domain-to-the-account" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Login to your Cloudflare account.</li>
+<li>Click on <strong>Add Site</strong> from the top navigation bar.</li>
+<li>
+<p>Enter your website’s root domain and then click Add Site. For example, if your website is "<a href="http://www.krenovate.com">www.krenovate.com</a>", type "krenovate.com".</p>
+<p><img alt="addsite" src="../images/DNS-Management/addsite.jpg" /></p>
+</li>
+<li>
+<p>Cloudflare, will then attempt to automatically identify your DNS records. This process takes approximately 60 seconds to complete.</p>
+<blockquote>
+<p>At this step, make sure that all the important records are being set properly. Some missing records may need to be <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151" target= "_blank"><strong>added manually</strong></a>.</p>
+</blockquote>
+<p><img alt="krenovatedns" src="../images/DNS-Management/krenovatedns.jpg" /> </p>
+</li>
+<li>
+<p><a href= "https://www.cloudflare.com/plans/#compare-features" target= "_blank">Select a plan level</a> - click confirm for the selected plan.</p>
+</li>
+<li>
+<p>Copy the 2 Cloudflare nameservers displayed and click <strong>Continue</strong>. </p>
+<p><img alt="krenovatenameservers" src="../images/DNS-Management/krenovatenameservers.jpg" /></p>
+</li>
+<li>
+<p>To finish domain setup and activate your domain on Cloudflare, <a href="#change-your-domain-nameservers-to-cloudflare">change your domain nameservers to Cloudflare</a>, as in the below section.</p>
+</li>
+</ol>
+<h4 id="change-your-domain-nameservers-to-cloudflare"><strong>Change your domain nameservers to Cloudflare</strong><a class="headerlink" href="#change-your-domain-nameservers-to-cloudflare" title="Permanent link">&para;</a></h4>
+<p>To change your domain nameservers, you will need to use information from Cloudflare to update admin settings at your current registrar.</p>
+<ol>
+<li>
+<p>Login to your registrar (GoDaddy) account and remove the existing nameservers.</p>
+<p><img alt="cfns1" src="../images/DNS-Management/cfns1.jpg" /></p>
+</li>
+<li>
+<p>Replace with the Cloudflare nameservers (copied in step 7 in the above section).</p>
+<p><img alt="cfns2" src="../images/DNS-Management/cfns2.jpg" /></p>
+</li>
+<li>
+<p>Click -&gt; <strong>Save</strong> - wait for a confirmation mail within 24 hrs.</p>
+</li>
+</ol>
+<p><a href= "https://support.cloudflare.com/hc/en-us/articles/205195708" target= "_blank"><strong>Refer here for more information</strong></a></p>
+<h4 id="managing-dns-records"><strong>Managing DNS Records</strong><a class="headerlink" href="#managing-dns-records" title="Permanent link">&para;</a></h4>
+<h5 id="add-dns-records"><strong>Add DNS Records</strong><a class="headerlink" href="#add-dns-records" title="Permanent link">&para;</a></h5>
+<p>If you need to add DNS records manually:</p>
+<ol>
+<li>
+<p>Within a specific account and domain, go to DNS.</p>
+</li>
+<li>
+<p>Select -&gt; <strong>Add record</strong>.</p>
+</li>
+<li>
+<p>Based on the record Type, you may have to fill out different fields. Refer <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare" target= "_blank"><strong>link</strong></a> for complete instructions.</p>
+</li>
+</ol>
+<h5 id="delete-a-dns-record"><strong>Delete a DNS Record</strong><a class="headerlink" href="#delete-a-dns-record" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>Within a specific account and domain, go to DNS.</p>
+</li>
+<li>
+<p>On a specific record, select <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Select -&gt; <strong>Delete</strong>. A confirmation dialog appears.</p>
+</li>
+<li>
+<p>Select <strong>Delete</strong> again to confirm.</p>
+</li>
+</ol>
                 
                   
                     
@@ -727,7 +932,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 15, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2021</span>
     
   </small>
 </div>
