@@ -41,6 +41,8 @@ NS Records contain information about your nameservers. Use these records to iden
 !!! Note
     The top 4 records are the most commonly used records.
 
+Read more about DNS Record types <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare" target="_blank">**here**</a>
+
 ##  **Platforms**
 
 At Krenovate, we use 3 platforms to manage the domains for client websites. All 3 are explained below:
@@ -49,7 +51,7 @@ At Krenovate, we use 3 platforms to manage the domains for client websites. All 
 
 In this case, the domain is registered and hosted with GoDaddy. All the DNS settings will be <a href= "https://in.godaddy.com/help/manage-dns-zone-files-680" target="_blank">**managed**</a> through the GoDaddy account. Follow the below steps:
 
-1.  Login to GoDaddy
+1.  Login to your GoDaddy account.
 2.  Select your domain to access the domain settings page.
 3.  Click -> Manage DNS
 
@@ -79,7 +81,7 @@ In this case, the domain is registered and hosted with GoDaddy. All the DNS sett
 
 ### **DigitalOcean**
 
-In this case, the Domain is registered with GoDaddy but will be hosted on DigitalOcean, hence, the DNS records would be managed through the DigitalOcean account. 
+In this case, if the Domain is registered with other registrar we can manage the DNS on DigitalOcean, hence, the DNS records would be managed through the DigitalOcean account. 
 
 This is determined by where your nameservers are pointing.
 
@@ -135,7 +137,7 @@ The <a href= "https://docs.digitalocean.com/products/networking/dns/how-to/manag
 
 This is an important step in order to be able to manage your domain through DigitalOcean.
 
-To connect a GoDaddy domain with the DigitalOcean droplet:
+To connect a GoDaddy domain with the DigitalOcean droplet, we have to replace the GoDaddy nameservers with the DigitalOcean Nameservers. Follow the below steps:
 
 1.  Login to your GoDaddy account.
 2.  Go to -> Domain manager
@@ -159,3 +161,74 @@ To connect a GoDaddy domain with the DigitalOcean droplet:
 7.  Wait for few minutes for GoDaddy to refresh the DNS settings. The Manage DNS should look like this:  
 
     ![updatedlook](images\DNS-Management\updatedlook.jpg)
+
+### **Cloudflare**
+
+At Cloudflare, DNS can be managed for a domain registered with some other registrar. For this to happen - a unique account for each client has to be setup. To do so, follow below steps in this guide:
+
+####    **Create a Cloudflare Account**
+
+1.  Go to <a href= "https://www.cloudflare.com/" target= "_blank">**www.cloudflare.com**</a>
+2.  Signup using an email id and password.
+3.  Click -> **Create Account**
+
+    ![cfcreateacct](images\DNS-Management\cfcreateacct.jpg)
+
+####    **Add a Domain to the account**
+
+1.  Login to your Cloudflare account.
+2.  Click on **Add Site** from the top navigation bar.
+3.  Enter your website’s root domain and then click Add Site. For example, if your website is "www.krenovate.com", type "krenovate.com".
+
+    ![addsite](images\DNS-Management\addsite.jpg)
+
+4.  Cloudflare, will then attempt to automatically identify your DNS records. This process takes approximately 60 seconds to complete.
+
+     >    At this step, make sure that all the important records are being set properly. Some missing records may need to be <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151" target= "_blank">**added manually**</a>.
+
+    ![krenovatedns](images\DNS-Management\krenovatedns.jpg) 
+
+5.  <a href= "https://www.cloudflare.com/plans/#compare-features" target= "_blank">Select a plan level</a> - click confirm for the selected plan.
+6.  Copy the 2 Cloudflare nameservers displayed and click **Continue**. 
+
+    ![krenovatenameservers](images\DNS-Management\krenovatenameservers.jpg)
+
+7.  To finish domain setup and activate your domain on Cloudflare, [change your domain nameservers to Cloudflare](#change-your-domain-nameservers-to-cloudflare), as in the below section.
+
+####    **Change your domain nameservers to Cloudflare**
+
+To change your domain nameservers, you will need to use information from Cloudflare to update admin settings at your current registrar.
+
+1.  Login to your registrar (GoDaddy) account and remove the existing nameservers.
+
+    ![cfns1](images\DNS-Management\cfns1.jpg)
+
+2.  Replace with the Cloudflare nameservers (copied in step 7 in the above section).
+
+    ![cfns2](images\DNS-Management\cfns2.jpg)
+
+3.  Click -> **Save** - wait for a confirmation mail within 24 hrs.
+
+<a href= "https://support.cloudflare.com/hc/en-us/articles/205195708" target= "_blank">**Refer here for more information**</a>
+
+####    **Managing DNS Records**
+
+#####   **Add DNS Records**
+
+If you need to add DNS records manually:
+
+1. Within a specific account and domain, go to DNS.
+
+2. Select -> **Add record**.
+
+3. Based on the record Type, you may have to fill out different fields. Refer <a href= "https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare" target= "_blank">**link**</a> for complete instructions.
+
+#####   **Delete a DNS Record**
+
+1. Within a specific account and domain, go to DNS.
+
+2. On a specific record, select **Edit**.
+
+3. Select -> **Delete**. A confirmation dialog appears.
+
+4. Select **Delete** again to confirm.
