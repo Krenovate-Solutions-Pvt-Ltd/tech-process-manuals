@@ -124,6 +124,8 @@ Cron tab is already installed. Follow the below link to learn how to create/add/
 
 <a href= "https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804" target="_blank">**How to use Cron to Automate Tasks**</a>
 
+-   Enter  `crontab -e` command to open the cron list.
+
 ####    **Delete tmp session files**
 
 1.  Add the following cron to delete temp session files:
