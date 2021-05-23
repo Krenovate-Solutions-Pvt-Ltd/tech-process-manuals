@@ -1,0 +1,688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Theme Development - Tech Process Manuals</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Inter";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#development-environment-setup-for-theme-development" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tech Process Manuals" class="md-header__button md-logo" aria-label="Tech Process Manuals" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tech Process Manuals
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Theme Development
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tech Process Manuals" class="md-nav__button md-logo" aria-label="Tech Process Manuals" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tech Process Manuals
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Server-Setup/" class="md-nav__link">
+        Server Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DNS-Management/" class="md-nav__link">
+        DNS Management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Theme Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Theme Development
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-laragon-software" class="md-nav__link">
+    Install Laragon Software
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Laragon Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-laragon" class="md-nav__link">
+    Download Laragon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-guide" class="md-nav__link">
+    Setup Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-welcome-page" class="md-nav__link">
+    Setup - Welcome Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-select-location" class="md-nav__link">
+    Setup - Select Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-options" class="md-nav__link">
+    Setup - Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-local-copy-of-the-website" class="md-nav__link">
+    Create a Local copy of the Website
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Local copy of the Website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-website" class="md-nav__link">
+    New Website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-website" class="md-nav__link">
+    Existing Website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-theme" class="md-nav__link">
+    Setup Theme
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-website_1" class="md-nav__link">
+    New Website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-website_1" class="md-nav__link">
+    Existing Website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-integration-setup" class="md-nav__link">
+    Deploying Integration: Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-laragon-software" class="md-nav__link">
+    Install Laragon Software
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Laragon Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-laragon" class="md-nav__link">
+    Download Laragon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-guide" class="md-nav__link">
+    Setup Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-welcome-page" class="md-nav__link">
+    Setup - Welcome Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-select-location" class="md-nav__link">
+    Setup - Select Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-options" class="md-nav__link">
+    Setup - Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-local-copy-of-the-website" class="md-nav__link">
+    Create a Local copy of the Website
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Local copy of the Website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-website" class="md-nav__link">
+    New Website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-website" class="md-nav__link">
+    Existing Website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-theme" class="md-nav__link">
+    Setup Theme
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-website_1" class="md-nav__link">
+    New Website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-website_1" class="md-nav__link">
+    Existing Website
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-integration-setup" class="md-nav__link">
+    Deploying Integration: Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="development-environment-setup-for-theme-development"><strong>Development Environment Setup for theme development</strong><a class="headerlink" href="#development-environment-setup-for-theme-development" title="Permanent link">&para;</a></h1>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" />  <strong>This documentation is for the Windows user only.</strong></p>
+<p>In this section of the manual, we will learn the steps to develop environment setup for theme development.</p>
+<h2 id="install-laragon-software"><strong>Install Laragon Software</strong><a class="headerlink" href="#install-laragon-software" title="Permanent link">&para;</a></h2>
+<p><a href= "https://laragon.org/" target= "_blank"><strong>Laragon</strong></a> is a portable, isolated, fast &amp; powerful universal development environment for PHP, Node.js, Python, Java, Go, Ruby. It is fast, lightweight, easy-to-use and easy-to-extend.</p>
+<p>Laragon is great for building and managing modern web applications. It is focused on performance - designed around stability, simplicity, flexibility and freedom.</p>
+<p>Below, we will see steps to install. setup and use Laragon.</p>
+<h3 id="download-laragon"><strong>Download Laragon</strong><a class="headerlink" href="#download-laragon" title="Permanent link">&para;</a></h3>
+<p>To start the journey with Laragon, just <a href= "https://laragon.org/download/" target= "_blank"><strong>download</strong></a> the latest version and click Next, Next, Next...</p>
+<p><img alt="download" src="../images/Theme-Development/download.jpg" /></p>
+<h3 id="setup-guide"><strong>Setup Guide</strong><a class="headerlink" href="#setup-guide" title="Permanent link">&para;</a></h3>
+<p>Below are the setup steps:</p>
+<h4 id="setup-welcome-page"><strong>Setup - Welcome Page</strong><a class="headerlink" href="#setup-welcome-page" title="Permanent link">&para;</a></h4>
+<p><img alt="welcome" src="../images/Theme-Development/welcome.jpg" /></p>
+<h4 id="setup-select-location"><strong>Setup - Select Location</strong><a class="headerlink" href="#setup-select-location" title="Permanent link">&para;</a></h4>
+<p><img alt="location" src="../images/Theme-Development/location.jpg" /></p>
+<h4 id="setup-options"><strong>Setup - Options</strong><a class="headerlink" href="#setup-options" title="Permanent link">&para;</a></h4>
+<p><img alt="options" src="../images/Theme-Development/options.jpg" /></p>
+<h3 id="getting-started"><strong>Getting Started</strong><a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<p>Below are <a href= "https://laragon.org/docs/quick-start.html" target= "_blank"><strong>steps</strong></a> to have a Wordpress CMS in a few minutes:</p>
+<ol>
+<li>
+<p>Start Laragon, then cick -&gt; <strong>Start All</strong></p>
+<p><img alt="quickapp" src="../images/Theme-Development/quickapp.jpg" /></p>
+</li>
+<li>
+<p>Click <strong>Menu</strong> -&gt; <strong>Quick app</strong> -&gt; <strong>Wordpress</strong>, type a name - such myblog</p>
+<p><img alt="projectname" src="../images/Theme-Development/projectname.jpg" /></p>
+</li>
+<li>
+<p>Laragon will display a Window and:</p>
+<ul>
+<li>Create correspond database: myblog</li>
+<li>Download the latest version of Wordpress</li>
+<li>Extract the code to C:\laragon\www\myblog</li>
+<li>Generate correspond pretty URL:</li>
+<li><a href="http://myblog.test">http://myblog.test</a></li>
+</ul>
+<p><img alt="progress" src="../images/Theme-Development/progress.jpg" /></p>
+</li>
+</ol>
+<h2 id="create-a-local-copy-of-the-website"><strong>Create a Local copy of the Website</strong><a class="headerlink" href="#create-a-local-copy-of-the-website" title="Permanent link">&para;</a></h2>
+<h3 id="new-website"><strong>New Website</strong><a class="headerlink" href="#new-website" title="Permanent link">&para;</a></h3>
+<p>Create a new wordpress site :Eg. client.test using quick app - Follow the <a href= "https://laragon.org/docs/quick-app.html" target= "_blank"><strong>Link</strong></a> for steps.</p>
+<h3 id="existing-website"><strong>Existing Website</strong><a class="headerlink" href="#existing-website" title="Permanent link">&para;</a></h3>
+<p>To create a local copy of an existing website, follow below steps:</p>
+<ol>
+<li>Create a new wordpress site :Eg. Existing client.test using quick app - as discussed in <a href="#new-website">New Website</a> above.</li>
+<li>Now, go to the already live version of the website eg. live.com</li>
+<li>Use <a href="https://wordpress.org/plugins/duplicator/">duplicator plugin</a> to create a backup of the site. You can read about the steps in <a href="https://www.wpkube.com/move-backup-website-wordpress-duplicator-plugin/">here</a> </li>
+<li>Once you have backup files, replace the wordpress files from exsitingclient.test with these backup file</li>
+<li>Visit oldclient.test/installer.php to start restore the website.</li>
+<li>Use your database credentials when asked and follow the steps.</li>
+<li>
+<p>Once setup, make sure to do the following:</p>
+<ul>
+<li>Remove all the Social Media Tracking code from plugin or theme<ul>
+<li>Facebook Analytics</li>
+<li>Google Analytics</li>
+<li>Any other</li>
+</ul>
+</li>
+<li>Use <a href="https://wordpress.org/plugins/disable-emails/">Disable Emails</a> plugin to disable all outgoing emails.</li>
+</ul>
+</li>
+</ol>
+<h2 id="setup-theme"><strong>Setup Theme</strong><a class="headerlink" href="#setup-theme" title="Permanent link">&para;</a></h2>
+<h3 id="new-website_1"><strong>New Website</strong><a class="headerlink" href="#new-website_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>We use <a href= "https://roots.io/sage/" target= "_blank"><strong>sage</strong></a> as our starter theme.</li>
+<li><a href= "https://roots.io/docs/sage/9.x/installation/" target= "_blank"><strong>Install</strong></a> the theme in the themes directory.</li>
+<li>Create a github private repository inside our <a href= "https://github.com/Krenovate-Solutions-Pvt-Ltd" target= "_blank"><strong>organization</strong></a>. </li>
+<li>Repository name should be set as <strong>project-name-theme</strong></li>
+<li>Push all the initial code to the remote repository.</li>
+</ol>
+<h3 id="existing-website_1"><strong>Existing Website</strong><a class="headerlink" href="#existing-website_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Clone the client's theme from github to your theme folder.</li>
+<li>Run composer and yarn - you can start working on the theme.</li>
+<li>You are advised to work on a new branch when a new feature is being created.</li>
+</ol>
+<h2 id="deploying-integration-setup"><strong>Deploying Integration: Setup</strong><a class="headerlink" href="#deploying-integration-setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>We use github actions to deploy changes to a particular server eg. Live, staging.</li>
+<li>You can setup the deployment integration by reading this <a href= "https://bhanusingh.in/deploying-sagewordpress-starter-theme-to-your-host-using-github-actions" target= "_blank"><strong>article</strong></a>.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2021</span>
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../DNS-Management/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              DNS Management
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
