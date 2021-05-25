@@ -1,8 +1,8 @@
 #   **Development Environment Setup for theme development**
 
-:pencil:  **This documentation is for the Windows user only.**
+:pencil: **This documentation is for the Windows user only.**
 
-In this section of the manual, we will learn the steps to develop environment setup for theme development.
+In this section of the manual, we will learn the steps to setup environment for theme development.
 
 ##  **Install Laragon Software**
 
