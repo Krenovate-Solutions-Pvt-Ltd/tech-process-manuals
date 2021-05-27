@@ -4,6 +4,7 @@ nav:
   -  DNS Management:  'DNS-Management.md'
   -  Theme Development:  'Theme-Development.md'
   -  Website Maintenance Processes:  'Website-Maintenance.md'
+  -  Website Optimization:  'Website-Optimization.md'
   
 theme:
   name: material
