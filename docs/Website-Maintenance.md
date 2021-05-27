@@ -53,7 +53,10 @@ To review a Server, on the assigned day of the week, the following activites nee
 
 1.  Go to all digital ocean accounts and check for unused droplets.
 2.  Confirm with the team, and delete (droplets) if unused.
-3.  Check for any unusual spike in the metric (CPU/Bandwidth Usage)
+3.  Check for any unusual spike in the Digital Ocean metrics (CPU/Bandwidth Usage). The below image shows an example:
+
+    ![performance](images\Website-Maintenance\performance.jpg)
+
 4.  Report/Investigate in case of spikes
 5.  Login to each server (SSH login), take a look at server logs 
 6.  You can go to server logs at  `“cd /usr/local/lsws/logs”`
