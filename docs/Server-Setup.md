@@ -118,6 +118,15 @@ For more information, refer <a href= "https://marketplace.digitalocean.com/apps/
 
 Setup removal of temporary session files and run **wp_cron**
 
+####    **Disabling CRON from WordPress**
+
+1.  Navigate to **wp_config.php** file by navigating to public file (/var/www/html/)
+2.  Add the following line after WP_DEBUG:
+
+        define( ‘'DISABLE_WP_CRON', true );
+
+3. The above command will disable WP CRON and use system CRON - <a href= "https://kinsta.com/knowledgebase/disable-wp-cron/#disable-wp-cron" target="_blank">**Refer Link**</a>
+
 #### **Create a Cron job**
 
 Cron tab is already installed. Follow the below link to learn how to create/add/manage a cronjob.
@@ -143,14 +152,7 @@ Example: */15 * * * * wget -q -O - https://example.com
 !!! Note
     Don't forget to change the url to the website url (sample <a href= "https://www.mycrush.fit/wp-cron.php?doing_wp_cron"target="_blank">**Link**</a>)
 
-####    **Disabling CRON from WordPress**
 
-1.  Navigate to **wp_config.php** file by navigating to public file (/var/www/html/)
-2.  Add the following line after WP_DEBUG:
-
-        define( ‘'DISABLE_WP_CRON', true );
-
-3. The above command will disable WP CRON and use system CRON - <a href= "https://kinsta.com/knowledgebase/disable-wp-cron/#disable-wp-cron" target="_blank">**Refer Link**</a>
 
 ### **Security - Prevent File Edits**
 
