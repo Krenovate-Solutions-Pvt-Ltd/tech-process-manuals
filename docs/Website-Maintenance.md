@@ -66,7 +66,7 @@ To review a Server, on the assigned day of the week, the following activites nee
 
 8.  Check storage available and resources usage [using “top”]
 
-    ![tops](images\Website-Management\tops.jpg)
+    ![tops](images\Website-Maintenance\tops.jpg)
 
 9.  Check for SSL expiries and Fix it.
 10. Make sure that the backups are being automatically taken. See [Backups](#backups) below.
