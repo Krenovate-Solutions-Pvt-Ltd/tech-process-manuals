@@ -695,14 +695,18 @@
 <li>
 <p>Optimize Font: </p>
 <ul>
-<li>When adding font in your theme make sure you load the font with display the font as <code>swap</code> - This solves the Flash of Unstyled Text (FOUT) problem. You can read about it <a href= "https://gtmetrix.com/ensure-text-remains-visible-during-webfont-load.html" target= "_blank">here</a>.</li>
+<li>When adding font in your theme make sure you load the font with display the font as <code>swap</code> - This solves the <a href= "https://gtmetrix.com/ensure-text-remains-visible-during-webfont-load.html" target= "_blank">Flash of Unstyled Text (FOUT) problem</a>. </li>
+<li>Use woff/woff2  format as it compresses the files and is supported by all modern browsers.</li>
 </ul>
 </li>
 <li>
 <p>CSS &amp; JS:</p>
 <ul>
 <li>Keep your CSS and JS in modules so that when the production theme is built, only the concerned CSS and JS are loaded for a particular page.</li>
+<li>Avoid @import rule for adding any external js/css file. Instead use <code>wp_enqueue_script()/wp_enqueue_style()</code> functions.</li>
 </ul>
+<p><a href= "https://developer.wordpress.org/reference/functions/wp_enqueue_script/" target= "_blank">Script Reference</a></p>
+<p><a href= "https://developer.wordpress.org/reference/functions/wp_enqueue_style/" target= "_blank">Style Reference</a></p>
 </li>
 </ol>
 <h2 id="server-size-optimization"><strong>Server Size Optimization</strong><a class="headerlink" href="#server-size-optimization" title="Permanent link">&para;</a></h2>
@@ -797,18 +801,17 @@
 <li>
 <p>The best place to start your optimization is <strong>Transactions</strong> tab, see below:</p>
 <p><img alt="transact" src="../images/Website-Optimization/transact.jpg" /></p>
-<p><img alt="transactions" src="../images/Website-Optimization/transactions.jpg" /></p>
+<p><img alt="transact1" src="../images/Website-Optimization/transact1.jpg" /></p>
 </li>
 <li>
 <p>When you scroll to the bottom of the page, you will see -&gt; <strong>Transaction Traces</strong> - these are the recent requests which are probably taking long durations. </p>
-<p><img alt="transactions1" src="../images/Website-Optimization/transactions1.jpg" /></p>
+<p><img alt="transtrace" src="../images/Website-Optimization/transtrace.jpg" /></p>
 <p><img alt="transactiontraces" src="../images/Website-Optimization/transactiontraces.jpg" /></p>
 </li>
 </ul>
 <p>For example: you can see <strong>‘/product/fulva-kurta/’</strong> taking <strong>1s</strong> of backend response time. You can click on the Transaction to know more about it. </p>
 <p><img alt="tt" src="../images/Website-Optimization/tt.jpg" /></p>
-<p><img alt="tt1" src="../images/Website-Optimization/tt1.jpg" /></p>
-<p><img alt="tt2" src="../images/Website-Optimization/tt2.jpg" /></p>
+<p><img alt="propups" src="../images/Website-Optimization/propups.jpg" /></p>
 <p>This propup has 3 tabs to analyse the request:</p>
 <ul>
 <li>Summary</li>
@@ -820,7 +823,7 @@
 <li>Once you have analysed the summary you can understand which are the most slow and time taking process for that particular request.</li>
 <li>
 <p>This graph tells you in an overview:</p>
-<p><img alt="summary" src="../images/Website-Optimization/summary.jpg" /></p>
+<p><img alt="summary1" src="../images/Website-Optimization/summary1.jpg" /></p>
 </li>
 </ul>
 <h5 id="trace-details"><strong>Trace Details</strong><a class="headerlink" href="#trace-details" title="Permanent link">&para;</a></h5>
@@ -828,18 +831,18 @@
 <li>This is the most important part of this task and it will give you the most important insights into your request.</li>
 <li>
 <p>Click on expand all button to expand every request</p>
-<p><img alt="tracedetails" src="../images/Website-Optimization/tracedetails.jpg" /></p>
+<p><img alt="tracedet" src="../images/Website-Optimization/tracedet.jpg" /></p>
 </li>
 <li>
 <p>You will get a Waterfall graph - gives you an idea of time taken by every function in that particular request</p>
-<p><img alt="tracedetails1" src="../images/Website-Optimization/tracedetails1.jpg" /></p>
+<p><img alt="waterfallgraph" src="../images/Website-Optimization/waterfallgraph.jpg" /></p>
 </li>
 <li>
 <p>Now the bottom most blue-bar gives you a relative idea of the time utilized by that particular function and its children. You can scroll down and take a quick look at every bar to find the longest one. This is the view you will get:</p>
 </li>
 <li>
-<p>Once you spot the time consuming function, for example :  "<strong>getRecentlyViewedSingleProduct</strong>" function seems to be taking <strong>143ms</strong>. </p>
-<p><img alt="tracedetails2" src="../images/Website-Optimization/tracedetails2.jpg" /></p>
+<p>Once you spot the time consuming function, for example :  "<strong>getRecentlyViewedSingleProduct</strong>" function seems to be taking <strong>97ms</strong>. </p>
+<p><img alt="tracedet1" src="../images/Website-Optimization/tracedet1.jpg" /></p>
 <p>In this case:</p>
 <ul>
 <li>Optimize your code for that function</li>
@@ -871,7 +874,7 @@ Follow the <a href= "https://docs.newrelic.com/docs/infrastructure/install-infra
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2021</span>
     
   </small>
 </div>
