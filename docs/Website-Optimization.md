@@ -104,11 +104,18 @@ Some common practices to follow during development to make sure the website perf
 
 2.  Optimize Font: 
 
-    *    When adding font in your theme make sure you load the font with display the font as `swap` - This solves the Flash of Unstyled Text (FOUT) problem. You can read about it <a href= "https://gtmetrix.com/ensure-text-remains-visible-during-webfont-load.html" target= "_blank">here</a>.
+    *    When adding font in your theme make sure you load the font with display the font as `swap` - This solves the <a href= "https://gtmetrix.com/ensure-text-remains-visible-during-webfont-load.html" target= "_blank">Flash of Unstyled Text (FOUT) problem</a>. 
+    *   Use woff/woff2  format as it compresses the files and is supported by all modern browsers.
 
 3.  CSS & JS:
 
     *   Keep your CSS and JS in modules so that when the production theme is built, only the concerned CSS and JS are loaded for a particular page.
+    *   Avoid @import rule for adding any external js/css file. Instead use `wp_enqueue_script()/wp_enqueue_style()` functions.
+
+    <a href= "https://developer.wordpress.org/reference/functions/wp_enqueue_script/" target= "_blank">Script Reference</a>
+
+    <a href= "https://developer.wordpress.org/reference/functions/wp_enqueue_style/" target= "_blank">Style Reference</a>
+
 
 
 ##  **Server Size Optimization**
@@ -204,11 +211,11 @@ Below, we will learn how to use the Newrelic functionalities to optimize the ser
 
     ![transact](images\Website-Optimization\transact.jpg)
 
-    ![transactions](images\Website-Optimization\transactions.jpg)
+    ![transact1](images\Website-Optimization\transact1.jpg)
 
 -   When you scroll to the bottom of the page, you will see -> **Transaction Traces** - these are the recent requests which are probably taking long durations. 
 
-    ![transactions1](images\Website-Optimization\transactions1.jpg)
+    ![transtrace](images\Website-Optimization\transtrace.jpg)
 
     ![transactiontraces](images\Website-Optimization\transactiontraces.jpg)
 
@@ -216,9 +223,7 @@ For example: you can see **‘/product/fulva-kurta/’** taking **1s** of backen
 
 ![tt](images\Website-Optimization\tt.jpg)
 
-![tt1](images\Website-Optimization\tt1.jpg)
-
-![tt2](images\Website-Optimization\tt2.jpg)
+![propups](images\Website-Optimization\propups.jpg)
 
 This propup has 3 tabs to analyse the request:
 
@@ -231,23 +236,23 @@ This propup has 3 tabs to analyse the request:
 -   Once you have analysed the summary you can understand which are the most slow and time taking process for that particular request.
 -   This graph tells you in an overview:
 
-    ![summary](images\Website-Optimization\summary.jpg)
+    ![summary1](images\Website-Optimization\summary1.jpg)
 
 #####   **Trace Details**
 
 -   This is the most important part of this task and it will give you the most important insights into your request.
 -   Click on expand all button to expand every request
 
-    ![tracedetails](images\Website-Optimization\tracedetails.jpg)
+    ![tracedet](images\Website-Optimization\tracedet.jpg)
 
 -   You will get a Waterfall graph - gives you an idea of time taken by every function in that particular request
 
-    ![tracedetails1](images\Website-Optimization\tracedetails1.jpg)
+    ![waterfallgraph](images\Website-Optimization\waterfallgraph.jpg)
 
 -   Now the bottom most blue-bar gives you a relative idea of the time utilized by that particular function and its children. You can scroll down and take a quick look at every bar to find the longest one. This is the view you will get:
--   Once you spot the time consuming function, for example :  "**getRecentlyViewedSingleProduct**" function seems to be taking **143ms**. 
+-   Once you spot the time consuming function, for example :  "**getRecentlyViewedSingleProduct**" function seems to be taking **97ms**. 
 
-    ![tracedetails2](images\Website-Optimization\tracedetails2.jpg)
+    ![tracedet1](images\Website-Optimization\tracedet1.jpg)
 
     In this case:
 
